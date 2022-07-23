@@ -12,7 +12,11 @@ export default function MainPage({ setLogin }) {
         <img src="./nukenzie.svg" alt="Logo NuKenzie" className="logo" />
         <h1>Centralize o controle das suas finanças</h1>
         <span>de forma rápida e segura</span>
-        <button type="submit" onClick={(event) => handleLogin(event)}>
+        <button
+          className="login-button"
+          type="submit"
+          onClick={(event) => handleLogin(event)}
+        >
           Iniciar
         </button>
       </div>

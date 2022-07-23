@@ -28,7 +28,7 @@ span {
   margin-bottom: 0.7rem;
 }
 
-button {
+.login-button {
   height: 3rem;
   font-family: "Inter";
   font-weight: 500;
@@ -37,6 +37,7 @@ button {
   background-color: #fd377e;
   border: 2px solid #fd377e;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .ellipse {
