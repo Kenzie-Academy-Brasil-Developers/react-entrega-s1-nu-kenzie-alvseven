@@ -1,0 +1,126 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rem;
+  background-color: #282c34;
+}
+
+.container-login {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 0.5rem;
+}
+
+h1 {
+  font-size: 1.3rem;
+  font-family: "Nunito", sans-serif;
+  color: #ffffff;
+}
+
+span {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin-bottom: 0.7rem;
+}
+
+button {
+  height: 3rem;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #fd377e;
+  border: 2px solid #fd377e;
+  border-radius: 8px;
+}
+
+.ellipse {
+  display: none;
+}
+
+@media (min-width: 586px) {
+  .container {
+    gap: 3rem;
+  }
+
+  .container-login {
+    width: 35%;
+    gap: 0.75rem;
+  }
+
+  .logo {
+    width: 6.5rem;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  .ellipse {
+    display: block;
+    width: 273px;
+    height: 273px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    gap: 4rem;
+  }
+
+  .container-login {
+    width: 30%;
+    gap: 1rem;
+  }
+
+  .logo {
+    width: 9rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .ellipse {
+    width: 343px;
+    height: 343px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    gap: 8rem;
+  }
+
+  .container-login {
+    width: 20%;
+    gap: 0.75rem;
+  }
+
+  .logo {
+    width: 7rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  span {
+    font-size: 0.8rem;
+  }
+
+  button {
+    width: 15rem;
+  }
+
+  .ellipse {
+    display: block;
+    width: 393px;
+    height: 393px;
+  }
+}
