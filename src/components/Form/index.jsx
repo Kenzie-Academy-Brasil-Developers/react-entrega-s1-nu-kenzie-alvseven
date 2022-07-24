@@ -1,6 +1,26 @@
 import "./form.css";
 
-export default function Form({ listTransactions, setListTransactions }) {
+export default function Form({ setListTransactions }) {
+  const addTransaction = (e) => {
+    e.preventDefault();
+    const description = document.querySelector("form")[0].value;
+    const value = Number(document.querySelector("form")[1].value);
+    const type = document.querySelector("form")[2].value;
+    const newTransaction = {
+      description,
+      type,
+      value,
+    };
+
+    setListTransactions((oldListTransactions) => [
+      ...oldListTransactions,
+      newTransaction,
+    ]);
+    document.querySelector("form")[0].value = "";
+    document.querySelector("form")[1].value = "";
+    document.querySelector("form")[2].value = "Entrada";
+  };
+
   return (
     <form>
       <div className="description-container">
@@ -13,7 +33,7 @@ export default function Form({ listTransactions, setListTransactions }) {
       <div className="value-type-container">
         <div className="value-container">
           <label>Valor</label>
-          <input placeholder="1" name="value"></input>
+          <input placeholder="R$ 1.350,00" name="value"></input>
         </div>
 
         <div className="type-container">
@@ -25,7 +45,9 @@ export default function Form({ listTransactions, setListTransactions }) {
         </div>
       </div>
 
-      <button type="submit">Inserir valor</button>
+      <button type="submit" onClick={(event) => addTransaction(event)}>
+        Inserir valor
+      </button>
     </form>
   );
 }

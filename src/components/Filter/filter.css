@@ -1,0 +1,64 @@
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  padding: 0;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn-todos,
+.btn-entradas,
+.btn-despesas {
+  font-family: "Nunito";
+  font-weight: 600;
+  font-size: 0.65rem;
+  text-align: center;
+  width: 20%;
+  height: 2rem;
+  color: #343a40;
+  background-color: #e9ecef;
+  border: 1.4px solid #e9ecef;
+  border-radius: 8px;
+}
+
+.selected {
+  color: #ffffff;
+  background-color: #fd377e;
+  border: 1.4px solid #fd377e;
+}
+
+@media (min-width: 1024px) {
+  .filter-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3rem;
+    padding: 2rem 0;
+  }
+  .buttons-container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+    width: 50%;
+  }
+
+  .btn-todos,
+  .btn-entradas,
+  .btn-despesas {
+    font-size: 0.75rem;
+    width: 50%;
+    height: 3rem;
+    cursor: pointer;
+  }
+
+  .selected {
+    color: #ffffff;
+    background-color: #fd377e;
+    border: 1.4px solid #fd377e;
+  }
+}

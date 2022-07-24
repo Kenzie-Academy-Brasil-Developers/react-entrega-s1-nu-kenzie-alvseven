@@ -1,0 +1,13 @@
+@media (min-width: 1024px) {
+  .main {
+    display: flex;
+
+    width: 100vw;
+    margin: 2rem auto;
+  }
+
+  .form-total-container,
+  .filter-list-container {
+    width: inherit;
+  }
+}

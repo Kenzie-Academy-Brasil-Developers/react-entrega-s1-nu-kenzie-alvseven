@@ -1,17 +1,35 @@
 import Header from "../Header";
 import Form from "../Form";
-// import TotalMoney from "../TotalMoney";
-// import List from "../List";
-// import Card from "../Card";
+import TotalMoney from "../TotalMoney";
+import Filter from "../Filter";
+import List from "../List";
 
-export default function Homepage({ setLogin }) {
+import "./homepage.css";
+
+export default function Homepage({
+  setLogin,
+  listTransactions,
+  setListTransactions,
+}) {
   return (
     <>
       <Header setLogin={setLogin} />
-      <Form />
-      {/* <TotalMoney />
-      <List />
-      <Card /> */}
+      <div className="main">
+        <div className="form-total-container">
+          <Form setListTransactions={setListTransactions} />
+          <TotalMoney listTransactions={listTransactions} />
+        </div>
+        <div className="filter-list-container">
+          <Filter
+            listTransactions={listTransactions}
+            setListTransactions={setListTransactions}
+          />
+          <List
+            listTransactions={listTransactions}
+            setListTransactions={setListTransactions}
+          />
+        </div>
+      </div>
     </>
   );
 }
