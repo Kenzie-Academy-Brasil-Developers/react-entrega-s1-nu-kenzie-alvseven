@@ -7,16 +7,13 @@ export default function List({
   setListTransactions,
 }) {
   const removeItem = (id) => {
-    const filteredListTransactions = listTransactions.filter((item, index) => {
-      return index !== Number(id);
-    });
+    const itemInListTransactions = listTransactions[Number(id)];
+
+    const filteredListTransactions = listTransactions.filter(
+      (item) => item.description !== itemInListTransactions.description
+    );
     setListTransactions(filteredListTransactions);
-
-    const filteredList = list.filter((item, index) => {
-      return index !== Number(id);
-    });
-
-    setList(filteredList);
+    setList(filteredListTransactions);
   };
 
   return (

@@ -7,8 +7,6 @@ export default function Form({ setListTransactions, setList }) {
     const type = document.querySelector("form")[2].value;
     const value = Number(document.querySelector("form")[1].value);
 
-    console.log(value);
-
     const newTransaction = {
       description: description,
       type: type,
