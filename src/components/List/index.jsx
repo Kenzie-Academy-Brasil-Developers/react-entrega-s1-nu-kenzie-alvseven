@@ -1,17 +1,23 @@
 import "./list.css";
 
-export default function List({ listTransactions, setListTransactions }) {
+export default function List({
+  list,
+  setList,
+  listTransactions,
+  setListTransactions,
+}) {
   const removeItem = (id) => {
     const filteredList = listTransactions.filter((item, index) => {
       return index !== Number(id);
     });
     setListTransactions(filteredList);
+    setList(filteredList);
   };
 
   return (
     <ul className="items">
-      {listTransactions.length > 0 ? (
-        listTransactions.map((item, index) => {
+      {list.length > 0 ? (
+        list.map((item, index) => {
           let classLi = "";
           item.type === "Entrada"
             ? (classLi = "item enter")

@@ -1,7 +1,7 @@
 import "./totalmoney.css";
 
-export default function TotalMoney({ listTransactions }) {
-  const amount = listTransactions.reduce((acc, item) => {
+export default function TotalMoney({ list }) {
+  const amount = list.reduce((acc, item) => {
     return item.type !== "Entrada" ? acc - item.value : acc + item.value;
   }, 0);
 

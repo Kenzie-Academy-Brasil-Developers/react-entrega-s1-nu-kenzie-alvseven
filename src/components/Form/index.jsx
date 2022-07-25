@@ -1,6 +1,6 @@
 import "./form.css";
 
-export default function Form({ setListTransactions }) {
+export default function Form({ setListTransactions, setList }) {
   const addTransaction = (e) => {
     e.preventDefault();
     const description = document.querySelector("form")[0].value;
@@ -16,6 +16,7 @@ export default function Form({ setListTransactions }) {
       ...oldListTransactions,
       newTransaction,
     ]);
+    setList((oldListTransactions) => [...oldListTransactions, newTransaction]);
     document.querySelector("form")[0].value = "";
     document.querySelector("form")[1].value = "";
     document.querySelector("form")[2].value = "Entrada";

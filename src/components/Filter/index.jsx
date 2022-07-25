@@ -1,24 +1,10 @@
 import "./filter.css";
 
-export default function Filter({ listTransactions, setListTransactions }) {
-  const filterTodos = () => {
-    setListTransactions(setListTransactions);
-  };
-
-  const filterEntradas = () => {
-    const filteredEntradas = listTransactions.filter(
-      (item) => item.type === "Entrada"
-    );
-    setListTransactions(filteredEntradas);
-  };
-
-  const filterDespesas = () => {
-    const filteredDespesas = listTransactions.filter(
-      (item) => item.type === "Despesa"
-    );
-    setListTransactions(filteredDespesas);
-  };
-
+export default function Filter({
+  filterTodos,
+  filterEntradas,
+  filterDespesas,
+}) {
   return (
     <div className="filter-container">
       <h3>Resumo financeiro</h3>
