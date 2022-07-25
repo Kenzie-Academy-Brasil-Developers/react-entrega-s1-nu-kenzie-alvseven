@@ -4,22 +4,51 @@ export default function Form({ setListTransactions, setList }) {
   const addTransaction = (e) => {
     e.preventDefault();
     const description = document.querySelector("form")[0].value;
-    const value = Number(document.querySelector("form")[1].value);
     const type = document.querySelector("form")[2].value;
-    const newTransaction = {
-      description,
-      type,
-      value,
-    };
+    const value = Number(document.querySelector("form")[1].value);
 
-    setListTransactions((oldListTransactions) => [
-      ...oldListTransactions,
-      newTransaction,
-    ]);
-    setList((oldListTransactions) => [...oldListTransactions, newTransaction]);
-    document.querySelector("form")[0].value = "";
-    document.querySelector("form")[1].value = "";
-    document.querySelector("form")[2].value = "Entrada";
+    console.log(value);
+
+    const newTransaction = {
+      description: description,
+      type: type,
+      value: value,
+    };
+    if (
+      type === "Entrada" &&
+      !value.toString().includes("-") &&
+      description !== "" &&
+      value !== 0
+    ) {
+      setListTransactions((oldListTransactions) => [
+        ...oldListTransactions,
+        newTransaction,
+      ]);
+      setList((oldListTransactions) => [
+        ...oldListTransactions,
+        newTransaction,
+      ]);
+      document.querySelector("form")[0].value = "";
+      document.querySelector("form")[1].value = "";
+      document.querySelector("form")[2].value = "Entrada";
+    } else if (
+      type === "Despesa" &&
+      !value.toString().includes("+") &&
+      description !== "" &&
+      value !== 0
+    ) {
+      setListTransactions((oldListTransactions) => [
+        ...oldListTransactions,
+        newTransaction,
+      ]);
+      setList((oldListTransactions) => [
+        ...oldListTransactions,
+        newTransaction,
+      ]);
+      document.querySelector("form")[0].value = "";
+      document.querySelector("form")[1].value = "";
+      document.querySelector("form")[2].value = "Entrada";
+    }
   };
 
   return (

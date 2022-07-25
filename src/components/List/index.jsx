@@ -7,10 +7,15 @@ export default function List({
   setListTransactions,
 }) {
   const removeItem = (id) => {
-    const filteredList = listTransactions.filter((item, index) => {
+    const filteredListTransactions = listTransactions.filter((item, index) => {
       return index !== Number(id);
     });
-    setListTransactions(filteredList);
+    setListTransactions(filteredListTransactions);
+
+    const filteredList = list.filter((item, index) => {
+      return index !== Number(id);
+    });
+
     setList(filteredList);
   };
 
@@ -23,6 +28,12 @@ export default function List({
             ? (classLi = "item enter")
             : (classLi = "item");
 
+          const value = item.value;
+          const formatedValue = value.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          });
+
           return (
             <li key={index} className={classLi}>
               <div className="card-item">
@@ -31,7 +42,11 @@ export default function List({
                   <p>{item.type}</p>
                 </div>
                 <div className="info-container">
-                  <p>R$ {item.value}</p>
+                  <p>
+                    {item.type === "Entrada"
+                      ? `+ ${formatedValue}`
+                      : `- ${formatedValue}`}
+                  </p>
                   <button
                     id={index}
                     onClick={(event) => removeItem(event.target.id)}
